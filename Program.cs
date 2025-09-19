@@ -1,13 +1,12 @@
-class Program
-{
-    public static void Main(string[] args)
-    {
-        var builder = WebApplication.CreateBuilder(args);
-        var app = builder.Build();
+using TaskWeb.Models;
 
-        app.MapGet("/", () => "Hello World!?");
+Tag tag = new Tag();
+tag.SetTitle("Estudo");
+Console.Write(tag.GetTitle());
 
-        app.Run();
-    }
-}
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
 
+app.MapGet("/", () => "Hello World!?");
+
+app.Run();
